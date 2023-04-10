@@ -1,28 +1,37 @@
 package com.exchangerate.api.entity;
 
-//import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Clase ExchageRate, representación de un objeto ExchangeRate.
+ * 
+ * @author: Sánchez Urbano Cynthia Lizbeth
+ * @version: 10/04/2023
+ */
 public class ExchangeRate {
-    private Data data;
-    private long timestamp;
+    /* Atributo de tipo Double, representa el valor de la tasa de cambio */
+    @JsonProperty("rate")
+    private Double rate;
 
-    // Constructor vacío necesario para la deserialización
+    /**
+     * Constructor vacío necesario para el mapeo de la respuesta de la API.
+     */
     public ExchangeRate() {}
 
-    // Getters y setters para los campos
-    public Data getData() {
-        return data;
+    /**
+     * Método que obtiene el valor del atributo rate.
+     * @return rate
+     */
+    public Double getRate() {
+        return rate;
     }
 
-    public void setData(Data data) {
-        this.data = data;
+    /**
+     * Método que asigna un nuevo valor al atributo rate.
+     * @param rate
+     */
+    public void setRate(Double rate) {
+        this.rate = rate;
     }
-
-    public long getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
-    }
+    
 }
